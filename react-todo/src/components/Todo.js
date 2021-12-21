@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {RiCloseCircleLine} from 'react-icons/ri';
 import {TiEdit} from 'react-icons/ti';
-import popupWindows from './popupWindows';
+
 import TodoForm from './TodoForm';
 function Todo({todos,completeTodo,removeTodo,updateTodo}) {
     const [edit,setEdit] = useState({

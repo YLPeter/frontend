@@ -1,4 +1,2 @@
 [build]
     command = "CI=false yarn build"
-    publish = "/build"
-    base = "/"
