@@ -2,4 +2,4 @@
     command = "CI=false yarn build"
     port = 3000
     targetPort =  3000
-    publish = "react-todo/build/"
+    publish = "build/"
