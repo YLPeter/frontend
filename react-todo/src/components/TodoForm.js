@@ -31,14 +31,23 @@ function TodoForm(props) {
             {props.edit ? (
                 <><input 
                 type= 'test'
-                placeholder= 'Update Your Item'
-                value= {input} 
-                name='text'
+                placeholder= 'Add a todo'
+                value= {todoData.no} 
+                name='no'
+                className='todo-input-number'
+                onChange = {handleChange}
+                ref={inputRef}
+            />
+            <input 
+                type= 'test'
+                placeholder= 'Add a todo'
+                value= {todoData.name} 
+                name='name'
                 className='todo-input'
                 onChange = {handleChange}
                 ref={inputRef}
-                />
-                <button className='Update-button'>
+            />
+                <button className='todo-button'>
                     Update
                 </button></>):(
                     <>

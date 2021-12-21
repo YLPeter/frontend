@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {RiCloseCircleLine} from 'react-icons/ri';
 import {TiEdit} from 'react-icons/ti';
+import popupWindows from './popupWindows';
 import TodoForm from './TodoForm';
 function Todo({todos,completeTodo,removeTodo,updateTodo}) {
     const [edit,setEdit] = useState({
@@ -31,7 +32,15 @@ function Todo({todos,completeTodo,removeTodo,updateTodo}) {
                 </div>
                 <div className="icons">
                     <RiCloseCircleLine 
-                        onClick={() => removeTodo(todo.id)}
+                        onClick={() => {
+                            const confirmBox = window.confirm(
+                            "Do you really want to delete?"
+                            )
+                            if (confirmBox === true) {
+                                removeTodo(todo.id)
+                            }
+                        }
+                    }
                         className= 'delete-icon'
                     />
 

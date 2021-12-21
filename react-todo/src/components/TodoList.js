@@ -3,23 +3,28 @@ import TodoForm from './TodoForm'
 import Todo from './Todo' 
 function TodoList() {
     const [todos,setTodos] = useState([])
-    const ifExistNum = todoId => [...todos].find(todo => todo.id === todoId)
-
-    
-    const addTodo = todo =>{
+    const findIfExistNum = todoId => [...todos].find(todo => todo.id === todoId)
+    const valuetodo = todo => {
         if(!todo.text || /^\s*$/.test(todo.text)){
             console.log("not empty")
-            return
+            return false
 
         }
         if(!todo.id || isNaN(Number(todo.id))){
             
             console.log("id not number")
-            return
+            return false
         }
-        if(ifExistNum(todo.id )){
+        if(findIfExistNum(todo.id)){
             console.log("id already exist")
-            return
+            return false
+        }
+        return true
+    }
+    
+    const addTodo = todo =>{
+        if (!valuetodo(todo)){
+            return 
         }
         console.log("check pass")
         const newTodos = [todo,...todos];
@@ -28,8 +33,8 @@ function TodoList() {
     }
 
     const updateTodo = (todoId,newValue) => {
-        if(!newValue.text || /^\s*$/.test(newValue.text)){
-            return
+        if (!valuetodo(newValue)){
+            return 
         }
         setTodos(prev => prev.map(item=>(item.id===todoId ? newValue:item)))
     }
