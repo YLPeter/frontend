@@ -37,7 +37,7 @@ function Todo({todos,completeTodo,removeTodo,updateTodo}) {
                             "Do you really want to delete?"
                             )
                             if (confirmBox === true) {
-                                removeTodo(todo.id)
+                                removeTodo(todo)
                             }
                         }
                     }

@@ -31,7 +31,7 @@ function TodoForm(props) {
             {props.edit ? (
                 <><input 
                 type= 'test'
-                placeholder= 'Add a todo'
+                placeholder= 'SeqNo'
                 value= {todoData.no} 
                 name='no'
                 className='todo-input-number'
@@ -40,7 +40,7 @@ function TodoForm(props) {
             />
             <input 
                 type= 'test'
-                placeholder= 'Add a todo'
+                placeholder= 'Add a todo text'
                 value= {todoData.name} 
                 name='name'
                 className='todo-input'
@@ -53,7 +53,7 @@ function TodoForm(props) {
                     <>
                     <input 
                         type= 'test'
-                        placeholder= 'Add a todo'
+                        placeholder= 'SeqNo'
                         value= {todoData.no} 
                         name='no'
                         className='todo-input-number'
