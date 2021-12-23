@@ -1,12 +1,12 @@
-
-import './App.css';
-
-import TodoTwoList from './components/todoTwoLists';
+import "./App.css";
+import TodoTwoList from "./components/todoTwoLists";
 function App() {
-  return (<>
-    <div className="todo-app">
-      <TodoTwoList />
-    </div>
+  return (
+    <>
+      
+      <div className="todo-app">
+        <TodoTwoList />
+      </div>
     </>
   );
 }

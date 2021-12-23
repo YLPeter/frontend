@@ -29,6 +29,17 @@ async function delTasks(todo){
         throw new Error(error)
     }
 }
+async function delAllTasks(){
+    try {
+        const res = await axios.delete('/api/tasks/all')
+        return res;
+    } catch (error) {
+        throw new Error(error)
+    }
+}
+
+
+
 async function createTasks(todo){
     try {
         const params = new URLSearchParams()
@@ -76,4 +87,4 @@ async function updateTask(todo){
         throw new Error(error)
     }
 }
-export {getTasks, delTasks, createTasks,completeTasks,updateTask};
+export {getTasks, delTasks, createTasks,completeTasks,updateTask,delAllTasks};

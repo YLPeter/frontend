@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import TodoList from './TodoList';
-import {getTasks, delTasks, createTasks,completeTasks,updateTask} from './apiInterface';
-
+import {getTasks, delTasks, createTasks,completeTasks,updateTask,delAllTasks} from './apiInterface';
+import {RiCloseCircleFill} from 'react-icons/ri';
 
 
 
@@ -71,6 +71,14 @@ function TodoTwoList() {
         const removeArr = [...todos].filter(todoEachEle=> todo.id !== todoEachEle.id)
         setTodos(removeArr,refresh());
     }
+    const removeTodoAll =async () =>{
+        let resp = await delAllTasks()
+        console.log(resp)
+        const removeArr = [];
+        setTodos(removeArr,refresh());
+    }
+
+
     const completeTodo = async(id) => {
         let updatedTodos = await todos.map(todo => {
             if (todo.id === id){
@@ -85,6 +93,16 @@ function TodoTwoList() {
     }
 
     return (<>
+    <h1 style={{ color: 'red' }}>Remove All
+    <RiCloseCircleFill
+        onClick={() => {
+          const confirmBox = window.confirm("Do you really want to delete all?");
+          if (confirmBox === true) {
+            removeTodoAll();
+          }
+        }}
+        className="delete-icon"
+    /></h1>
     <div className="todo-app">
         <TodoList 
             text={"Non Complete Task"} 
