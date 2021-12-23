@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import TodoList from './TodoList';
 import {getTasks, delTasks, createTasks,completeTasks,updateTask} from './apiInterface';
-const axios = require('axios');
+
 
 
 
